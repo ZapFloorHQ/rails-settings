@@ -24,6 +24,8 @@ module RailsSettings
     end
 
     def key(name, options={})
+      puts options.inspect
+      puts name.inspect
       raise ArgumentError.new("has_settings: Symbol expected, but got a #{name.class}") unless name.is_a?(Symbol)
       raise ArgumentError.new("has_settings: Option :defaults expected, but got #{options.keys.join(', ')}") unless options.blank? || (options.keys == [:defaults,:class_name])
       @klass.default_settings[name] = (options[:defaults] || {}).stringify_keys.freeze
