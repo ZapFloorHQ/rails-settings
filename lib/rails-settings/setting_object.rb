@@ -3,6 +3,10 @@ module RailsSettings
     self.table_name = 'settings'
 
     belongs_to :target, :polymorphic => true
+    
+    def target_type=(class_name)
+      super(class_name.constantize.base_class.to_s)
+    end
 
     validates_presence_of :var, :target_type
     validate do
