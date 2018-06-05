@@ -4,7 +4,7 @@ module RailsSettings
 
     belongs_to :target, :polymorphic => true
     
-    def target_type=(class_name)
+    def target_type
       puts "rails settings::settingObject target_type=#{target.class}"
       target.class.to_s
     end
