@@ -5,8 +5,8 @@ module RailsSettings
     belongs_to :target, :polymorphic => true
     
     def target_type=(class_name)
-      puts "rails settings::settingObject target_type=#{class_name}"
-      super(class_name.constantize.base_class.to_s)
+      puts "rails settings::settingObject target_type=#{target.class}"
+      target.class.to_s
     end
 
     validates_presence_of :var, :target_type
