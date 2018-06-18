@@ -4,10 +4,10 @@ module RailsSettings
 
     belongs_to :target, :polymorphic => true
     
-    def target_type
-      puts "rails settings::settingObject target_type=#{target.class}"
-      target.class.to_s
-    end
+   # def target_type
+    #  puts "rails settings::settingObject target_type=#{target.class}"
+     # target.class.to_s
+    # end
 
     validates_presence_of :var, :target_type
     validate do
